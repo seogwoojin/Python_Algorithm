@@ -18,7 +18,6 @@ for _ in range(T):
         if move==1:
             break        
         move//=2
-        print(move)
         lst=[[],[]]
         bef=check[chs]
         for be in bef:
@@ -28,8 +27,6 @@ for _ in range(T):
         chs+=1
         check.append(lst)
         
-
-    print(check)
     
     for c in check:
         if string[c[0][0]]==string[c[1][0]]:
