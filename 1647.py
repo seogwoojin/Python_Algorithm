@@ -11,7 +11,6 @@ for _ in range(E):
     dist[come[1]].append((come[0],come[2]))
 
 start=1
-check=0
 already=[False]*(V+1)
 answer=0
 queue=[(0,1)]
