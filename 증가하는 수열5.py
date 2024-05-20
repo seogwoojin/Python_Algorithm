@@ -35,5 +35,3 @@ for n in range(now_max-1, 0,-1):
             before=i[1]
             break
 print(' '.join(map(str,reversed(ans))))
-
-        
