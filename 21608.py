@@ -83,9 +83,3 @@ for ne in next:
         if alr:
             break
 print(ans)
-
-
-        
-            
-            
-
