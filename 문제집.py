@@ -1,5 +1,7 @@
 import sys
 from collections import deque
+import heapq
+
 input=sys.stdin.readline
 N,M=map(int,input().split())
 
@@ -11,19 +13,20 @@ for i in range(M):
     graph[a].append(b)
     weight[b]+=1
 
-queue=deque()
+queue=[]
 
 for i in range(1,N+1):
     if weight[i]==0:
         queue.append(i)
+heapq.heapify(queue)
 answer=[]
 while queue:
-    now=queue.popleft()
+    now=heapq.heappop(queue)
     answer.append(now)
     for i in graph[now]:
         weight[i]-=1
         if weight[i]==0:
-            queue.append(i)
-        
+            heapq.heappush(queue,i)
+    
 for a in answer:
     print(a, end=' ')

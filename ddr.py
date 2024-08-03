@@ -25,7 +25,6 @@ for i in range(1, len(num)):
     for x in range(5):
         for y in range(5):
             if dp[i-1][x][y]!=0:
-                print(i-1, x, y)
                 if next!=y:
                     if dp[i][next][y]==0:
                         dp[i][next][y]=dp[i-1][x][y]+getDistance(x,next)
