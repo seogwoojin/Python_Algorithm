@@ -88,5 +88,3 @@ for i in range(M+K):
     else:
         a,b=command[1]-1, command[2]-1
         print(findSumTree(0, N-1, 1))
-    print(lazy)
-    print(seg_tree)
