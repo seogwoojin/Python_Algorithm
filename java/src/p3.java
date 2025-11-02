@@ -15,6 +15,37 @@ public class p3 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        System.out.println(Integer.MAX_VALUE + 1);
+        String s = st.nextToken();
+
+        StringBuilder sb = new StringBuilder();
+        int answer = 0;
+        boolean plus = true;
+
+        for (int i=0; i < s.length(); i++){
+            char ch = s.charAt(i);
+            if (ch == '+' || ch == '-'){
+                if (plus){
+                    answer += Integer.parseInt(sb.toString());
+                } else {
+                    answer -= Integer.parseInt(sb.toString());
+                }
+
+                if (ch == '-'){
+                    plus = false;
+                }
+
+
+                sb = new StringBuilder();
+            } else {
+                sb.append(ch);
+            }
+        }
+        if (plus){
+            answer += Integer.parseInt(sb.toString());
+        } else {
+            answer -= Integer.parseInt(sb.toString());
+        }
+
+        System.out.println(answer);
     }
 }
